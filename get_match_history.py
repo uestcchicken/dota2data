@@ -58,4 +58,4 @@ for m in matches:
             result = win_or_lose(m_id, p['player_slot'])
             break
     print('match id: ', m_id, 'result: ', result, 'hero: ', h_name)
-    
+

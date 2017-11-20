@@ -8,6 +8,4 @@ matches = matches_h['matches']
 for m in matches:
     m_id = m['match_id']
     seq = m['match_seq_num']
-    time = m['start_time']
     print(m_id, seq)
-    print(time)

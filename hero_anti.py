@@ -1,6 +1,7 @@
 import numpy as np
 import math
 import dota2api
+import sys
 
 hero_num = 120
 api = dota2api.Initialise('85EAAACBEB46A84273D29DCF1A777246')
@@ -29,14 +30,42 @@ for i in range(1, hero_num + 1):
 
 name_list = get_hero_name_list()
 for i in range(1, 6):
-    top = anti.argmax()
-    x = (int)(top / 121)
-    y = top % 121
-    print('top ', i, ': ')
-    print(name_list[x], 'rate: ', self_rate[x])
-    print(name_list[y], 'rate: ', self_rate[y])
-    print('expected rate: ', self_rate[x] / (self_rate[x] + self_rate[y]))
-    print('actual rate: ', mutual_rate[x][y])
-    print('score: ', anti[x][y])
-    print('********************************')
-    anti[x][y] = 0
+    if len(sys.argv) == 1:
+        top = anti.argmax()
+        x = (int)(top / 121)
+        y = top % 121
+        print('top ', i, ': ')
+        print(name_list[x], 'rate: ', self_rate[x])
+        print(name_list[y], 'rate: ', self_rate[y])
+        print('expected rate: ', self_rate[x] / (self_rate[x] + self_rate[y]))
+        print('actual rate: ', mutual_rate[x][y])
+        print('score: ', anti[x][y])
+        print('********************************')
+        anti[x][y] = 0
+    else:
+        hero_id = int(sys.argv[1])
+        hero_anti = anti[hero_id]
+        top = hero_anti.argmax()
+        x = hero_id
+        y = top
+        print('top ', i, ': ')
+        print(name_list[x], 'rate: ', self_rate[x])
+        print(name_list[y], 'rate: ', self_rate[y])
+        print('expected rate: ', self_rate[x] / (self_rate[x] + self_rate[y]))
+        print('actual rate: ', mutual_rate[x][y])
+        print('score: ', anti[x][y])
+        print('********************************')
+        anti[x][y] = 0
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

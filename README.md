@@ -3,4 +3,4 @@
 2. python download_data.py
 3. python hero_self_rate.py
 4. python hero_mutual_rate.py
-5. python hero_anti.py
+5. python hero_anti.py [id]

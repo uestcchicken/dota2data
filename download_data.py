@@ -33,6 +33,7 @@ while 1:
 		players = m['players']
 		#排除人数不为10的，如solo
 		if len(players) != 10:
+			print('player num error: ', len(players))
 			continue
 		#获取所有上场英雄
 		for p in players:
@@ -45,10 +46,12 @@ while 1:
 		#按ID排序
 		radiant_team.sort()
 		dire_team.sort()
-		#排除未选择英雄
+		#排除英雄ID错误
 		if radiant_team[0] == 0:
+			print('player hero error: 0')
 			continue
 		if dire_team[0] == 0:
+			print('player hero error: 0')
 			continue
 		#按获胜方和战败方存储英雄ID
 		if win: 

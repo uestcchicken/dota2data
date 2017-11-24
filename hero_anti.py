@@ -26,7 +26,9 @@ for i in range(1, hero_num + 1):
         else:
             expected_rate = self_rate[i] / (self_rate[i] + self_rate[j])
             actual_rate = mutual_rate[i][j]
-            anti[i][j] = math.log(expected_rate) / math.log(actual_rate)
+            
+            #anti[i][j] = - math.log(self_rate[i]) / math.log(actual_rate) / math.log(self_rate[j])
+            anti[i][j] = - math.log(0.4) / math.log(0.5) / math.log(0.4)
 
 name_list = get_hero_name_list()
 for i in range(1, 6):
@@ -37,7 +39,7 @@ for i in range(1, 6):
         print('top ', i, ': ')
         print(name_list[x], 'rate: ', self_rate[x])
         print(name_list[y], 'rate: ', self_rate[y])
-        print('expected rate: ', self_rate[x] / (self_rate[x] + self_rate[y]))
+        #print('expected rate: ', self_rate[x] / (self_rate[x] + self_rate[y]))
         print('actual rate: ', mutual_rate[x][y])
         print('score: ', anti[x][y])
         print('********************************')
@@ -51,7 +53,7 @@ for i in range(1, 6):
         print('top ', i, ': ')
         print(name_list[x], 'rate: ', self_rate[x])
         print(name_list[y], 'rate: ', self_rate[y])
-        print('expected rate: ', self_rate[x] / (self_rate[x] + self_rate[y]))
+        #print('expected rate: ', self_rate[x] / (self_rate[x] + self_rate[y]))
         print('actual rate: ', mutual_rate[x][y])
         print('score: ', anti[x][y])
         print('********************************')

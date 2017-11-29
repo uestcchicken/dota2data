@@ -7,6 +7,8 @@ save to matches.dat
 '''
 
 import dota2api
+import time
+import json
 api = dota2api.Initialise('85EAAACBEB46A84273D29DCF1A777246')
 
 counter = 0
@@ -18,7 +20,16 @@ while 1:
 	latest += 1
 	f_latest.close()
 	#调用API获取比赛信息
-	data_got = api.get_match_history_by_seq_num(matches_requested = 20, start_at_match_seq_num = latest)
+	while(1):
+		try:
+			data_got = api.get_match_history_by_seq_num(matches_requested = 20, start_at_match_seq_num = latest)
+		except json.decoder.JSONDecodeError:
+			print('error, wait 10 seconds.************************************************************')
+			time.sleep(10)
+			continue
+		else:
+			break
+
 	matches = data_got['matches']
 	#写入文件
 	f_data = open('matches.dat', 'a')

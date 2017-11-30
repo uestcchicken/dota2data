@@ -23,9 +23,9 @@ while 1:
 	while(1):
 		try:
 			data_got = api.get_match_history_by_seq_num(matches_requested = 50, start_at_match_seq_num = latest)
-		except json.decoder.JSONDecodeError:
+		except (Exception):
 			print('error, wait 3 seconds.******************************************')
-			time.sleep(10)
+			time.sleep(3)
 			continue
 		else:
 			break

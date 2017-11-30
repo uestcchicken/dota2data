@@ -27,8 +27,8 @@ for i in range(1, hero_num + 1):
             expected_rate = self_rate[i] / (self_rate[i] + self_rate[j])
             actual_rate = mutual_rate[i][j]
             
-            #anti[i][j] = - math.log(self_rate[i]) / math.log(actual_rate) / math.log(self_rate[j])
-            anti[i][j] = - math.log(0.4) / math.log(0.5) / math.log(0.4)
+            anti[i][j] = - math.log(self_rate[i]) / math.log(actual_rate) / math.log(self_rate[j])
+            #anti[i][j] = - math.log(0.4) / math.log(0.5) / math.log(0.4)
 
 name_list = get_hero_name_list()
 for i in range(1, 6):

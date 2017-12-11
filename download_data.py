@@ -8,7 +8,6 @@ save to matches.dat
 
 import dota2api
 import time
-import json
 api = dota2api.Initialise('85EAAACBEB46A84273D29DCF1A777246')
 
 counter = 0
